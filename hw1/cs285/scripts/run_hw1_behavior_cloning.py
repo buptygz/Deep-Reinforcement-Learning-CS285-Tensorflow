@@ -28,7 +28,7 @@ class BC_Trainer(object):
 
         ################
         ## RL TRAINER
-        ################
+        ################ 
 
         self.rl_trainer = RL_Trainer(self.params) ## TODO: look in here and implement this
 
@@ -85,6 +85,7 @@ def main():
 
     # convert args to dictionary
     params = vars(args)
+
 
     ##################################
     ### CREATE DIRECTORY FOR LOGGING
