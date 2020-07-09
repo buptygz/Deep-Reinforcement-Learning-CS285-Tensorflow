@@ -60,7 +60,7 @@ class MLPPolicy(BasePolicy):
 
     def build_action_sampling(self):
         mean, logstd = self.parameters
-        self.sample_ac = mean + tf.exp(logstd) * tf.random_normal(tf.shape(mean), 0, 1)
+        self.sample_ac = mean + tf.exp(logstd) * tf.random_normal(tf.shape(mean), 0, 1) # N
 
     def define_train_op(self):
         raise NotImplementedError

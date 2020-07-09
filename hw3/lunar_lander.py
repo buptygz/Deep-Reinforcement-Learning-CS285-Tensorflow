@@ -138,7 +138,7 @@ class LunarLander(gym.Env):
 
         self._reset()
 
-    def _seed(self, seed=None):
+    def _eed(self, seed=None):
         self.np_random, seed = seeding.np_random(seed)
         return [seed]
 
@@ -460,4 +460,4 @@ if __name__=="__main__":
             print(["{:+0.2f}".format(x) for x in s])
             print("step {} total_reward {:+0.2f}".format(steps, total_reward))
         steps += 1
-        if done: break
+        if done: breaks
