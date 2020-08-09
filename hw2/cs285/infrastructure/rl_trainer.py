@@ -38,7 +38,9 @@ class RL_Trainer(object):
         #############
 
         # Make the gym environment
+
         self.env = gym.make(self.params['env_name'])
+
         self.env.seed(seed)
 
         # Maximum length for episodes
