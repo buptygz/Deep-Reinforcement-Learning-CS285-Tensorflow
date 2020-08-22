@@ -117,11 +117,8 @@ class BootstrappedContinuousCritic(BaseCritic):
                 # HINT2: need to populate the following (in the feed_dict): 
                     #a) sy_ob_no with ob_no
                     #b) sy_target_n with target values calculated above
-        for t in range(self.num_target_updates):
+        for _ in range(self.num_target_updates):
             target_values = re_n + self.gamma*self.forward(next_ob_no) * np.logical_not(terminal_n)
-            # if t==0 or t==99:
-            #     print(target_values)
-            #     input()
             for _ in range(self.num_grad_steps_per_target_update):
                 loss, _ = self.sess.run([self.critic_loss, self.critic_update_op], feed_dict={self.sy_ob_no: ob_no, self.sy_target_n: target_values})
             
